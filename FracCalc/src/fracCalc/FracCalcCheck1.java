@@ -2,17 +2,14 @@ package fracCalc;
 
 import java.util.*;
 
-public class FracCalc {
+public class FracCalcCheck1 {
 
     public static void main(String[] args) {
         // TODO: Read the input from the user and call produceAnswer with an equation
-    	String userInput = "";
-    	Scanner scan = new Scanner(System.in);
-    	//System.out.println("Please input your equation: ");
-    	while (userInput != "quit" ) {
-    	String fracInput = scan.nextLine();
+    	Scanner userInput = new Scanner(System.in);
+    	System.out.println("Please input your equation: ");
+    	String fracInput = userInput.nextLine();
     	System.out.println(produceAnswer(fracInput));
-    	}
     }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -30,11 +27,7 @@ public class FracCalc {
         String operand1 = stringSplit[0];
         String operator = stringSplit[1];
         String operand2 = stringSplit[2];
-        String [] splitOperand1 = operand1.split("_");
-        String whole;
-        String denominator;
-        String numerator;
-        
+        return operand2;
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
