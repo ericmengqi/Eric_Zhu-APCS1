@@ -30,13 +30,40 @@ public class FracCalc {
         String operand1 = stringSplit[0];
         String operator = stringSplit[1];
         String operand2 = stringSplit[2];
-        String [] splitOperand1 = operand1.split("_");
-        String whole;
-        String denominator;
-        String numerator;
-        
+        String[] splitOperand1 = operand1.split("_");   
+        return ("whole:" + whole + " numerator:" + numerator + " denominator:" + denominator);
     }
+    public static String splitOperand (String input) {
+    	 String[] stringSplit = input.split(" ");
+         String whole;
+         String numerator;
+         String denominator;
+         String operand;
+		String[] splitOperand = operand.split("_");
+         if(splitOperand.length == 2){
+         	whole = splitOperand[0];
+             String[] splitOperandAgain = splitOperand[0].split("/");
+         	if(splitOperandAgain.length == 1){
+         		numerator = splitOperandAgain[0];
+         		denominator = "1";
+         	} else{
+         		numerator = splitOperandAgain[0];
+         		denominator = splitOperandAgain[1];
+         	}
+         } else{
+             String[] splitOperandAgain = splitOperand[0].split("/");
+             whole = "0";
+         	if(splitOperandAgain.length == 1){
+         		numerator = splitOperandAgain[0];
+         		denominator = "1";
+         	} else{
+         		numerator = splitOperandAgain[0];
+         		denominator = splitOperandAgain[1];
+         	}
+         }
+         return ("whole:" + whole + " numerator:" + numerator + " denominator:" + denominator);
+     }
+}
 
     // TODO: Fill in the space below with any helper methods that you think you will need
     
-}
