@@ -9,25 +9,30 @@ public class FracCalcTestCheckpoint2
     @Test public void testCheckpoint2_2() {  FracCalcTestALL.assertForEarlyCheckpoints(null, "whole:20 numerator:0 denominator:1", "-20_3/7", FracCalc.produceAnswer("-3/7 - 20"));}
     @Test public void testCheckpoint2_3() {  FracCalcTestALL.assertForEarlyCheckpoints(null, "whole:0 numerator:27 denominator:21", "-33_2/7", FracCalc.produceAnswer("-32 - 27/21"));}
 
+  
+    
+    
+    
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
+    	
         String[] stringSplit = input.split(" ");
         String operand1 = stringSplit[0];
         String operator = stringSplit[1];
         String operand2 = stringSplit[2];
+        String[] splitOperand1 = operand1.split("_");
         String wholeNum;
         String numerator;
         String denominator;
-        String wholeNum1;
+        String wholeNum1; 
         String numerator1;
         String denominator1;
-        String[] splitOperand1 = operand1.split("_");
         if(splitOperand1.length == 2){
         	wholeNum = splitOperand1[0];
             String[] splitOperand1Again = splitOperand1[0].split("/");
         	if(splitOperand1Again.length == 1){
-        		numerator = splitOperand1A[0];
+        		numerator = splitOperand1Again[0];
         		denominator = "1";
         	} else{
         		numerator = splitOperand1Again[0];
@@ -69,5 +74,4 @@ public class FracCalcTestCheckpoint2
         }
         return ("whole:" + wholeNum1 + " numerator:" + numerator1 + " denominator:" + denominator1);
     }
-
 }
